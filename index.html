@@ -713,14 +713,41 @@ footer {
 @media (max-width: 900px) {
   nav { padding: 24px 28px; }
   section { padding: 80px 28px; }
-  .hero { padding: 0 28px 64px; }
+  .hero { padding: 0 28px 48px; }
+
+  /* Hero fix — stack bottom vertically */
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .hero-stats {
+    gap: 32px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .stat-num { font-size: 28px; }
+  .hero-desc { max-width: 100%; }
+
+  .scroll-indicator { display: none; }
+
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .skills-layout { grid-template-columns: 1fr; }
+
   .project-card-inner { grid-template-columns: 1fr; }
+  .project-card-inner[style*="direction:rtl"] .project-info {
+    border-left: none !important;
+    border-right: none !important;
+  }
+  .project-info { border-right: none; }
   .project-visual { min-height: 240px; }
+
   .certs-grid { grid-template-columns: 1fr; }
   .exp-item { grid-template-columns: 1fr; gap: 16px; }
   .contact-layout { grid-template-columns: 1fr; gap: 60px; }
+  .contact-headline { font-size: 36px; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
 }
 
