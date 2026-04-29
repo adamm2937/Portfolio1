@@ -31,10 +31,8 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
-  cursor: none;
+  cursor: auto;
 }
-
-
 
 /* NAV */
 nav {
@@ -178,14 +176,6 @@ nav {
   50% { transform: scaleY(1); transform-origin: top; }
   51% { transform: scaleY(1); transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
-}
-
-.scroll-text {
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--gray-600);
-  writing-mode: vertical-rl;
 }
 
 /* SECTION BASE */
@@ -364,7 +354,6 @@ section {
 .project-card {
   position: relative;
   overflow: hidden;
-  cursor: none;
   transition: all 0.4s ease;
 }
 
@@ -519,65 +508,6 @@ section {
 
 @keyframes soc-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 
-/* SCANNER VISUAL */
-.scanner-viz {
-  width: 100%; height: 100%;
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  padding: 40px;
-}
-
-.scanner-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 12px; width: 100%;
-}
-
-.scanner-node {
-  aspect-ratio: 1;
-  border: 1px solid rgba(245,245,243,0.1);
-  border-radius: 2px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'DM Mono', monospace;
-  font-size: 7px; color: var(--gray-600);
-  transition: all 0.3s;
-}
-
-.scanner-node.active { border-color: rgba(245,245,243,0.6); color: var(--gray-200); background: rgba(245,245,243,0.05); }
-.scanner-node.found { border-color: var(--white); color: var(--white); background: rgba(245,245,243,0.1); }
-
-/* CTF VISUAL */
-.ctf-viz {
-  width: 100%; height: 100%;
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  padding: 40px;
-}
-
-.ctf-terminal {
-  width: 100%;
-  border: 1px solid rgba(245,245,243,0.12);
-  background: rgba(245,245,243,0.02);
-  padding: 20px 24px;
-}
-
-.ctf-line {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; margin-bottom: 10px;
-  color: var(--gray-600); line-height: 1.5;
-}
-
-.ctf-line .prompt { color: var(--gray-400); }
-.ctf-line .cmd { color: var(--white); }
-.ctf-line .out { color: var(--gray-600); }
-.ctf-line .success { color: var(--gray-200); }
-.ctf-cursor {
-  display: inline-block; width: 7px; height: 12px;
-  background: var(--white); vertical-align: middle;
-  animation: blink 1s step-end infinite;
-}
-@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-
 /* CERTS SECTION */
 .certs-grid {
   display: grid;
@@ -641,8 +571,6 @@ section {
 
 .exp-item:first-child { border-top: 1px solid var(--border); }
 
-.exp-left {}
-
 .exp-period {
   font-family: 'DM Mono', monospace;
   font-size: 11px; color: var(--gray-600);
@@ -658,8 +586,6 @@ section {
   font-size: 11px; color: var(--gray-600);
   letter-spacing: 0.05em;
 }
-
-.exp-right {}
 
 .exp-role {
   font-family: 'Syne', sans-serif;
@@ -803,7 +729,7 @@ footer {
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo"></a>
+  <a href="#" class="nav-logo">AM</a>
 </nav>
 
 <!-- HERO -->
@@ -811,8 +737,8 @@ footer {
   <div class="hero-bg-text">SEC</div>
   <h1 class="hero-name">Adam<br><em>Mougharbel</em></h1>
   <div class="hero-subtitle">
-    
-    <span class="hero-subtitle-text">Cybersecurity Student &amp; Researcher - Paris</span>
+    <div class="hero-subtitle-line"></div>
+    <span class="hero-subtitle-text">Cybersecurity Student &amp; Researcher — Paris</span>
   </div>
   <div class="hero-bottom">
     <p class="hero-desc">Building defenses, breaking assumptions, and documenting everything in between.</p>
@@ -842,7 +768,7 @@ footer {
   <div class="about-grid">
     <div class="about-text reveal reveal-delay-1">
       <p>Computer Science student at Université Paris-Saclay with a deep focus on cybersecurity and intelligent security systems. Driven by a single question: how do attacks evolve, and how do we stay ahead of them. From threat detection and digital forensics to SOC operations and incident response, I work at the intersection of understanding how systems break and engineering what makes them resilient.</p>
-      <p>My approach is analytical and hands-on. I investigate attack patterns, identify root causes, and build practical detection and response tools that go beyond theory - solutions designed to strengthen real-world infrastructure and reduce actual risk.</p>
+      <p>My approach is analytical and hands-on. I investigate attack patterns, identify root causes, and build practical detection and response tools that go beyond theory — solutions designed to strengthen real-world infrastructure and reduce actual risk.</p>
       <p>Currently seeking an <strong>alternance</strong> for my Master's in Cybersecurity. I'm motivated by impactful work, collaboration with serious professionals, and the relentless pursuit of building systems that are harder to break than they are to defend.</p>
     </div>
     <div class="about-right reveal reveal-delay-2">
@@ -889,7 +815,7 @@ footer {
         <div class="exp-location">Geneva, Switzerland</div>
       </div>
       <div class="exp-right">
-        <div class="exp-role">IT & Systems Security Intern</div>
+        <div class="exp-role">IT &amp; Systems Security Intern</div>
         <ul class="exp-duties">
           <li>Managed user access (IAM) in Active Directory environments using least-privilege principles.</li>
           <li>Analysed logs and data for incident detection and investigation across OS and network layers.</li>
@@ -924,13 +850,13 @@ footer {
   <div class="skills-layout reveal">
     <div class="skill-block">
       <div class="skill-block-num">01</div>
-      <div class="skill-block-title">Security & Detection</div>
+      <div class="skill-block-title">Security &amp; Detection</div>
       <div class="skill-tags">
         <span class="skill-tag">Splunk</span>
         <span class="skill-tag">Wazuh</span>
         <span class="skill-tag">Suricata</span>
         <span class="skill-tag">Wireshark</span>
-        <span class="skill-tag">MITRE ATT&CK</span>
+        <span class="skill-tag">MITRE ATT&amp;CK</span>
         <span class="skill-tag">OpenVAS</span>
         <span class="skill-tag">CVSS</span>
         <span class="skill-tag">ISO 27001</span>
@@ -938,7 +864,7 @@ footer {
     </div>
     <div class="skill-block">
       <div class="skill-block-num">02</div>
-      <div class="skill-block-title">Offensive & Recon</div>
+      <div class="skill-block-title">Offensive &amp; Recon</div>
       <div class="skill-tags">
         <span class="skill-tag">Nmap</span>
         <span class="skill-tag">Burp Suite</span>
@@ -950,7 +876,7 @@ footer {
     </div>
     <div class="skill-block">
       <div class="skill-block-num">03</div>
-      <div class="skill-block-title">Infrastructure & Dev</div>
+      <div class="skill-block-title">Infrastructure &amp; Dev</div>
       <div class="skill-tags">
         <span class="skill-tag">Linux</span>
         <span class="skill-tag">Windows</span>
@@ -990,7 +916,7 @@ footer {
             <span class="ptag">Python</span>
             <span class="ptag">SSH</span>
             <span class="ptag">HTTP</span>
-            <span class="ptag">MITRE ATT&CK</span>
+            <span class="ptag">MITRE ATT&amp;CK</span>
             <a href="https://bit.ly/48nCfLm" target="_blank" style="font-size:10px; padding:4px 10px; border:1px solid var(--border-strong); color:var(--white); letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; transition:all 0.2s;">↗ View</a>
           </div>
         </div>
@@ -1025,13 +951,13 @@ footer {
           <div>
             <div class="project-number">Project 02</div>
             <div class="project-name">SIEM-Lite — Threat Detection Platform</div>
-            <p class="project-brief">Full log ingestion pipeline with real-time correlation and alerting via Slack, email, and webhooks. Implements 9 detection rules mapped to MITRE ATT&CK tactics (T1110, T1078, T1548...). Parses auth, nginx, and syslog sources with window-based correlation and SQLite persistence.</p>
+            <p class="project-brief">Full log ingestion pipeline with real-time correlation and alerting via Slack, email, and webhooks. Implements 9 detection rules mapped to MITRE ATT&amp;CK tactics (T1110, T1078, T1548...). Parses auth, nginx, and syslog sources with window-based correlation and SQLite persistence.</p>
           </div>
           <div class="project-tags-row">
             <span class="ptag">Python</span>
             <span class="ptag">SQLite</span>
             <span class="ptag">Docker</span>
-            <span class="ptag">MITRE ATT&CK</span>
+            <span class="ptag">MITRE ATT&amp;CK</span>
             <a href="https://bit.ly/4u9wZ6o" target="_blank" style="font-size:10px; padding:4px 10px; border:1px solid var(--border-strong); color:var(--white); letter-spacing:0.08em; text-transform:uppercase; text-decoration:none; transition:all 0.2s;">↗ View</a>
           </div>
         </div>
@@ -1078,7 +1004,7 @@ footer {
               <div class="soc-bar-track"><div class="soc-bar-fill" style="width:88%;"></div><div class="soc-pulse" style="animation-delay:2.1s"></div></div>
               <span class="soc-bar-val">88%</span>
             </div>
-            <div style="margin-top:16px; font-family:'DM Mono',monospace; font-size:9px; color:rgba(245,245,243,0.2); letter-spacing:.1em;">9 RULES — MITRE ATT&CK MAPPED</div>
+            <div style="margin-top:16px; font-family:'DM Mono',monospace; font-size:9px; color:rgba(245,245,243,0.2); letter-spacing:.1em;">9 RULES — MITRE ATT&amp;CK MAPPED</div>
           </div>
         </div>
       </div>
@@ -1170,53 +1096,11 @@ footer {
 </footer>
 
 <script>
-const cursor = document.getElementById('cursor');
-const ring = document.getElementById('cursorRing');
-let mx = 0, my = 0, rx = 0, ry = 0;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-function animateCursor() {
-  rx += (mx - rx) * 0.15;
-  ry += (my - ry) * 0.15;
-  cursor.style.left = mx + 'px';
-  cursor.style.top = my + 'px';
-  ring.style.left = rx + 'px';
-  ring.style.top = ry + 'px';
-  requestAnimationFrame(animateCursor);
-}
-animateCursor();
-
 const reveals = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, { threshold: 0.1 });
 reveals.forEach(el => observer.observe(el));
-
-const grid = document.getElementById('scanGrid');
-if (grid) {
-  const labels = ['22','80','443','21','3306','8080','53','25','110','23','8443','445','3389','5900','27017','6379'];
-  let nodes = [];
-  for(let i = 0; i < 32; i++) {
-    const n = document.createElement('div');
-    n.className = 'scanner-node';
-    n.textContent = labels[i % labels.length];
-    grid.appendChild(n);
-    nodes.push(n);
-  }
-  let scanIdx = 0;
-  function runScan() {
-    nodes.forEach(n => n.className = 'scanner-node');
-    function step() {
-      if (scanIdx < nodes.length) {
-        nodes[scanIdx].classList.add('active');
-        if ([2,5,7,12,18,22,28].includes(scanIdx)) nodes[scanIdx].classList.add('found');
-        scanIdx++;
-        setTimeout(step, 60 + Math.random()*80);
-      } else { scanIdx = 0; setTimeout(runScan, 2500); }
-    }
-    step();
-  }
-  runScan();
-}
 </script>
 </body>
 </html>
