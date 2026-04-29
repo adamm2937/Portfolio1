@@ -34,29 +34,7 @@ body {
   cursor: none;
 }
 
-/* CURSOR */
-.cursor {
-  position: fixed;
-  width: 6px; height: 6px;
-  background: var(--white);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%,-50%);
-  transition: width 0.2s, height 0.2s, background 0.2s;
-}
-.cursor-ring {
-  position: fixed;
-  width: 32px; height: 32px;
-  border: 1px solid rgba(245,245,243,0.4);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%,-50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
-}
-body:has(a:hover) .cursor-ring,
-body:has(button:hover) .cursor-ring { width: 48px; height: 48px; border-color: var(--white); }
+
 
 /* NAV */
 nav {
@@ -822,9 +800,6 @@ footer {
 </style>
 </head>
 <body>
-
-<div class="cursor" id="cursor"></div>
-<div class="cursor-ring" id="cursorRing"></div>
 
 <!-- NAV -->
 <nav>
